@@ -14,7 +14,11 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  let clone =  { ...item };
+
+  clone.durability = 100
+
+  return clone
 }
 
 function get(item) {
