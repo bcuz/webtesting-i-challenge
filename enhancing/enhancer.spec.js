@@ -1,12 +1,15 @@
 const enhancer = require('./enhancer.js');
 
-describe('tests', () => {
+let sword = {
+  name: 'sword',
+  durability: 25,
+  enhancement: 20
+}
 
-  it('restore durability', () => {
+describe('enhancing system', () => {
+
+  it('should restore durability', () => {
     // arrange. mock data
-    let sword = {
-      durability: 25
-    }
 
     // act
     let result = enhancer.repair(sword)
