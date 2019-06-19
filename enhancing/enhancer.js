@@ -6,7 +6,14 @@ module.exports = {
 };
 
 function succeed(item) {
-  return { ...item };
+  let clone =  { ...item };
+
+  if (clone.enhancement !== 20) {
+    clone.enhancement++
+  }
+
+  return clone
+
 }
 
 function fail(item) {
