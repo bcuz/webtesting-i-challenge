@@ -17,7 +17,22 @@ function succeed(item) {
 }
 
 function fail(item) {
-  return { ...item };
+
+  let clone =  { ...item };
+
+  if (clone.enhancement < 15) {
+    clone.durability -= 5
+  } 
+  
+  if (clone.enhancement >= 15) {
+    clone.durability -= 10
+  } 
+  
+  if (clone.enhancement > 16 ) {
+    clone.enhancement -= 1
+  }
+
+  return clone
 }
 
 function repair(item) {

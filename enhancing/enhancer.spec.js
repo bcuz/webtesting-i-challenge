@@ -3,7 +3,7 @@ const enhancer = require('./enhancer.js');
 let sword = {
   name: 'sword',
   durability: 25,
-  enhancement: 19
+  enhancement: 14
 }
 let shield = {
   name: 'shield',
@@ -29,8 +29,29 @@ describe('enhancing system', () => {
     let result1 = enhancer.succeed(shield)
 
     // assert 
-     expect(result.enhancement).toBe(20);
+     expect(result.enhancement).toBe(15);
      expect(result1.enhancement).toBe(20);
    })
+  
+  describe('fail function', () => {
+   
+   it('should decrease durability', () => {
+    // act
+    let result = enhancer.fail(sword)
+    let result1 = enhancer.fail(shield)
+
+    // assert 
+     expect(result.durability).toBe(20);
+     expect(result1.durability).toBe(15);
+    })
+    
+    it('should decrease enhancement', () => {
+      let result1 = enhancer.fail(shield)
+      
+      expect(result1.enhancement).toBe(19);
+
+   })
+
+  })
 
 })
