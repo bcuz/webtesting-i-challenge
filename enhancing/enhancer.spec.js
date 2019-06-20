@@ -10,6 +10,11 @@ let shield = {
   durability: 25,
   enhancement: 20
 }
+let cape = {
+  name: 'cape',
+  durability: 25,
+  enhancement: 0
+}
 
 describe('enhancing system', () => {
 
@@ -58,5 +63,17 @@ describe('enhancing system', () => {
    })
 
   })
+
+  describe('get function', () => {
+   
+    it('should modify name when enhancement level is greater than 0', () => {
+     let result = enhancer.get(sword)
+     let result1 = enhancer.get(cape)
+ 
+      expect(result.name).toBe('[+14] sword');
+      expect(result1.name).toBe('cape');
+     })    
+ 
+   })
 
 })

@@ -44,5 +44,11 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item };
+  let clone =  { ...item };
+
+  if (clone.enhancement > 0) {
+    clone.name = `[+${clone.enhancement}] ${clone.name}`
+  }
+
+  return clone
 }
