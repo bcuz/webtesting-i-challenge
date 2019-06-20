@@ -1,20 +1,5 @@
 const enhancer = require('./enhancer.js');
-
-let sword = {
-  name: 'sword',
-  durability: 25,
-  enhancement: 14
-}
-let shield = {
-  name: 'shield',
-  durability: 25,
-  enhancement: 20
-}
-let cape = {
-  name: 'cape',
-  durability: 25,
-  enhancement: 0
-}
+const {sword, shield, cape} = require('./items');
 
 describe('enhancing system', () => {
 
@@ -59,9 +44,7 @@ describe('enhancing system', () => {
       
       expect(result.enhancement).toBe(14);
       expect(result1.enhancement).toBe(19);
-
    })
-
   })
 
   describe('get function', () => {
@@ -73,7 +56,5 @@ describe('enhancing system', () => {
       expect(result.name).toBe('[+14] sword');
       expect(result1.name).toBe('cape');
      })    
- 
    })
-
 })
